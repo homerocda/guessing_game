@@ -1,0 +1,55 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+	font-family: Play, sans-serif;
+	background-color: #ffda07;
+	width: 100%;
+	height: 100%;
+}
+
+.hourglassBack {
+    background-color: #d9d9d9;
+    min-height: 5px;
+}
+
+#hourglass {
+    background-color: #7777fd;
+    min-height: 5px;
+    width : 0;
+}
+
+#gameBox {
+	width: 400px;
+	padding: 1em;
+	background-color: #e9e9e9;
+}
+
+#lastGuess {
+	font-size: 10em;
+	color: #ff3333;
+}
+
+#notificationBox {
+    position: absolute;
+    bottom: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    visibility: hidden;
+    color: #ff0055;
+    font-size: 2em;
+    text-align: center;
+    font-family: Play, sans-serif;
+    z-index: 2000;
+}
+
+.gameOverMessage {
+	color: #fd3333;
+	text-align: center;
+	font-size: 3em;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guessing Game</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- import the Play google font -->
+    <link href="https://fonts.googleapis.com/css?family=Play:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <div class="bg h-100 d-flex align-items-center">
+
+        <!-- The welcome dialog shows instructions on how to play the game. -->
+        <div id="welcomeDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static"
+                data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-info">
+                        <h3 class="text-primary text-center">Guessing Game!</h3>
+                        <p>
+                            You have <span id="time"></span> seconds to guess the number between
+                            <span id="lowerBound"></span> and <span id="higherBound"></span>. At
+                            each correct guess, you get <span id="basePoint"></span> points and
+                            the clock is reset!
+                        </p>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button id="welcomePlay" type="button" class="btn btn-primary mx-auto">
+                            Let's Play<br>
+                            &#9654;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification box, notifies the user if the guess was right or wrong -->
+        <h1 id="notificationBox">HIGHER!</h1>
+
+        <!-- Game Box, where the user can input the guesses, display the last guess,
+            hourglass and current score -->
+        <div id="gameBox" class="container-fluid mx-auto rounded shadow-lg text-center">
+            <h3>Guess the Number!</h3>
+
+            <!-- Input box where the user can enter guesses -->
+            <div class="input-group input-group-lg text-center w-50 mx-auto">
+                <input id="userGuess" name="userGuess" type="text" class="form-control m-2">
+            </div>
+            
+            <!-- Shows the last guess and current score -->
+            <h2 id="lastGuess">&nbsp;</h2>
+            <div>Score: <span id="scoreDisplay"></span></div>
+
+            <!-- This is the hourglass, shows how much time the user has left to guess the number -->
+            <div class="w-100 mx-auto hourglassBack">
+                <div id="hourglass" class=""></div>
+            </div>
+        </div>
+
+        <!-- Game Over dialog, displays the number the user should have guessed, his score and
+            allows him to start the game again. -->
+        <div id="gameOverDialog" class="modal fade" tabindex="-2" role="dialog" data-backdrop="static"
+                data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3 class="gameOverMessage">Game Over</h3>
+                        <div class="text-center">The number was <span id="gameOverNumber"></span>!</div>
+                        <div class="text-center">You scored <span id="gameOverScore"></span> points!</div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button id="playAgain" type="button" class="btn btn-primary mx-auto">
+                            Play Again<br>&#11118;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- We used the full version of jQuery in order to use it to animate the hourglass -->
+    <script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
+    <!-- Popper, required by Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- The game code -->
+    <script type="text/javascript" src="js/guessing-game.js"></script>
+</body>
+</html>
